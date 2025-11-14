@@ -1,0 +1,14 @@
+{
+  "name": "language-learning-lab",
+  "version": "1.0.1",
+  "description": "Language Learning Lab for Brazilian Portuguese with story generation and XP system",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.0",
+    "express": "^4.19.0",
+    "openai": "^4.0.0"
+  }
+}
