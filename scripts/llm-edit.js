@@ -111,7 +111,7 @@ function parseEdit(comment) {
   console.log("🤖 Sending request to OpenAI...");
 
 const completion = await openai.chat.completions.create({
-    model: "gpt-5.1-mini",
+    model: "gpt-5.1-thinking",
     reasoning: { effort: "medium" },
     temperature: 0,
     messages: [
