@@ -113,15 +113,16 @@ function parseEdit(comment) {
 const completion = await openai.chat.completions.create({
     model: "gpt-5.1-mini",
     reasoning: { effort: "medium" },
+    temperature: 0,
     messages: [
-      {
-        role: "system",
-        content:
-          "You are an expert code editor. Return ONLY the FULL updated file content. No explanations.",
-      },
-      {
-        role: "user",
-        content: `Edit this file according to the instructions.
+        {
+            role: "system",
+            content:
+            "You are an expert code editor. Return ONLY the FULL updated file content. No explanations."
+        },
+        {
+            role: "user",
+            content: `Edit this file according to the instructions.
 
 FILE PATH: ${filePath}
 
@@ -133,11 +134,10 @@ ORIGINAL FILE:
 ${original}
 FILE_END>>>
 
-Return ONLY the updated file.`,
-      },
-    ],
-    temperature: 0,
-  });
+Return ONLY the updated file.`
+        }
+    ]
+});
 
   const newContent = completion.choices[0].message.content.trim();
 
